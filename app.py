@@ -1,8 +1,9 @@
-from flask import Flask, request
+from flask import Flask
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    user_input = request.args.get("input")
-    eval(user_input)  # ❌ Intentional vulnerability
     return "Hello GH-100 Admin Demo 🚀"
+
+if __name__ == "__main__":
+    app.run(debug=True)
